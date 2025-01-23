@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: writel
+  contents: write
 
 jobs:
   release:
@@ -14,20 +14,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-
-      - name: Install Dependencies
-        run: bun install
-
-      - name: Build Project
-        run: bun run build
-
-      - uses: vimtor/action-zip@v1.2
-        with:
-          files: dist/ package.json
-          dest: release.zip
 
       - name: Create GitHub Release
         uses: marvinpinto/action-automatic-releases@latest
