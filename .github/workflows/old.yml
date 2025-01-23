@@ -1,54 +1,54 @@
-name: Create release
-
-on:
-  push:
-    branches: [ main ]
-
-permissions:
-  contents: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Automated Version ${{ github.event.inputs.release_type || 'patch' }}
-        uses: 'phips28/gh-action-bump-version@master'
-        id: version-bump
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          skip-push:  'true'
-          target-branch: "main"
-          default: ${{ github.event.inputs.release_type || 'patch' }}
-          commit-message: "CI: bumps version to {{version}}"
-          minor-wording: 'add,Adds,new,added'
-          major-wording: 'MAJOR,cut-major'
-          patch-wording: 'patch,fixes,fixed,fix'
-          rc-wording: 'RELEASE,alpha'
-
-  release:
-    needs:
-      - build
-    name: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-
-      - name: Create GitHub Release
-        uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ steps.package-version.outputs.current-version}}"
-          prerelease: true
-          title: "Node-Red-ESPHome Release v${{ steps.package-version.outputs.current-version}}"
-#          files: release.zip
-
+#name: Create release
+#
+#on:
+#  push:
+#    branches: [ main ]
+#
+#permissions:
+#  contents: write
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0
+#      - name: Automated Version ${{ github.event.inputs.release_type || 'patch' }}
+#        uses: 'phips28/gh-action-bump-version@master'
+#        id: version-bump
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+#          skip-push:  'true'
+#          target-branch: "main"
+#          default: ${{ github.event.inputs.release_type || 'patch' }}
+#          commit-message: "CI: bumps version to {{version}}"
+#          minor-wording: 'add,Adds,new,added'
+#          major-wording: 'MAJOR,cut-major'
+#          patch-wording: 'patch,fixes,fixed,fix'
+#          rc-wording: 'RELEASE,alpha'
+#
+#  release:
+#    needs:
+#      - build
+#    name: release
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout Code
+#        uses: actions/checkout@v4
+#
+#      - name: get-npm-version
+#        id: package-version
+#        uses: martinbeentjes/npm-get-version-action@v1.3.1
+#
+#      - name: Create GitHub Release
+#        uses: marvinpinto/action-automatic-releases@latest
+#        with:
+#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#          automatic_release_tag: "${{ steps.package-version.outputs.current-version}}"
+#          prerelease: true
+#          title: "Node-Red-ESPHome Release v${{ steps.package-version.outputs.current-version}}"
+##          files: release.zip
+#
