@@ -74,5 +74,4 @@ body:
         - label: I have searched for similar issues in the repository.
         - label: I have read the documentation and troubleshooting guide.
         - label: I have included all necessary details to reproduce the issue.
-    validations:
-      required: true
+
