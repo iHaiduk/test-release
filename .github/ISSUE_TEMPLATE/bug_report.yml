@@ -1,0 +1,78 @@
+name: 🐞 Report a bug
+description: File a bug/issue on the ESPHome Node-Red project
+labels: [needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the details below to help us understand and resolve the issue.
+  - type: input
+    id: summary
+    attributes:
+      label: Brief Summary
+      description: Provide a short summary of the bug (1-2 sentences).
+      placeholder: Describe the issue briefly.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Current Behavior
+      description: A clear & concise description of what you're experiencing.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A clear & concise description of what you expected to happen.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Example flow
+      description: If you have a minimal example flow that demonstrates the issue, share it here.
+      value: |
+        ```
+        paste your flow here
+        ```
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Environment
+      description: Please tell us about your environment. Include any relevant information on how you are running.
+      value: |
+        - Plugin version:
+        - Node-RED version:
+        - Node.js version:
+        - npm version:
+        - Platform/OS:
+        - Browser:
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this bug?
+      options:
+        - Low
+        - Medium
+        - High
+      default: Low
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Confirm you've checked the following:
+      options:
+        - label: I have searched for similar issues in the repository.
+        - label: I have read the documentation and troubleshooting guide.
+        - label: I have included all necessary details to reproduce the issue.
+    validations:
+      required: true
