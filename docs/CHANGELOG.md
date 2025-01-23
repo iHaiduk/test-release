@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/iHaiduk/test-release/compare/v1.5.0...v1.6.0) (2025-01-23)
+
+
+### Features
+
+* added issue template ([834b5ea](https://github.com/iHaiduk/test-release/commit/834b5ea38647844c68b3a872eb65847b99bd90da))
+
 # [1.5.0](https://github.com/iHaiduk/test-release/compare/v1.4.0...v1.5.0) (2025-01-23)
 
 
