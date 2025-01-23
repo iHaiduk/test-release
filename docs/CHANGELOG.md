@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/iHaiduk/test-release/compare/v1.0.0...v1.0.1) (2025-01-23)
+
+
+### Bug Fixes
+
+* update file ([700e4d2](https://github.com/iHaiduk/test-release/commit/700e4d2e467454577c35111f0e3ffb44a9aefcda))
+
 # 1.0.0 (2025-01-23)
 
 
