@@ -25,7 +25,6 @@ export default {
     "semantic-release-pinst",
     ['@semantic-release/commit-analyzer', {preset}],
     ['@semantic-release/release-notes-generator', {
-      preset,
       writerOpts: {
         types: [
           { type: 'feat', section: 'Features' },
@@ -49,11 +48,11 @@ export default {
         "changelogFile": "docs/CHANGELOG.md"
       }
     ],
-    "@semantic-release/github",
     ["@semantic-release/git", {
       "assets": ["docs", "package.json"],
       "message": "chore(release): ${nextRelease.version} :tada: [skip ci]\n\n${nextRelease.notes}"
-    }]
+    }],
+    "@semantic-release/github",
   ],
   releaseRules: [
     {type: "docs", release: "patch"},
