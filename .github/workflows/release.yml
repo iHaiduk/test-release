@@ -50,9 +50,5 @@ jobs:
           automatic_release_tag: "${{ steps.package-version.outputs.current-version}}"
           prerelease: true
           title: "Node-Red-ESPHome Release v${{ steps.package-version.outputs.current-version}}"
-#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-#          automatic_release_tag: "latest"
-#          prerelease: true
-#          title: Node-Red-ESPHome Release
-          files: release.zip
+#          files: release.zip
 
