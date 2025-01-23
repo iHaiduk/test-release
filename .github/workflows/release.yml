@@ -17,6 +17,7 @@ jobs:
           fetch-depth: 0
       - name: Automated Version ${{ github.event.inputs.release_type || 'patch' }}
         uses: 'phips28/gh-action-bump-version@master'
+        id: version-bump
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -43,6 +44,6 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
-          title: Node-Red-ESPHome Release
+          title: Node-Red-ESPHome Release ${{ needs.build.version-bump.outputs.newTag }}
           files: release.zip
 
