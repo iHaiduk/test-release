@@ -42,8 +42,8 @@ jobs:
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: ${{ needs.build.version-bump.outputs.newTag }}
           prerelease: true
-          title: Node-Red-ESPHome Release ${{ needs.build.version-bump.outputs.newTag }}
+          title: Node-Red-ESPHome Release
           files: release.zip
 
