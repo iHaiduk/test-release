@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/iHaiduk/test-release/compare/v1.1.0...v1.2.0) (2025-01-23)
+
+
+### Features
+
+* config release ([680cbe3](https://github.com/iHaiduk/test-release/commit/680cbe34ba8f639333f04e0909ea3da69a302d95))
+* config release 2 ([d98f745](https://github.com/iHaiduk/test-release/commit/d98f7456ab85a92ca462db85d59f955ee2360f57))
+
 ## [1.0.1](https://github.com/iHaiduk/test-release/compare/v1.0.0...v1.0.1) (2025-01-23)
 
 
