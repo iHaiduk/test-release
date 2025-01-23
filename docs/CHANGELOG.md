@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/iHaiduk/test-release/compare/v1.2.1...v1.3.0) (2025-01-23)
+
+
+### Features
+
+* added dependabot.yml ([34c9a2d](https://github.com/iHaiduk/test-release/commit/34c9a2dcacd7cd4b8ab8f4ff0fd85871a54ed7d1))
+
 ## [1.2.1](https://github.com/iHaiduk/test-release/compare/v1.2.0...v1.2.1) (2025-01-23)
 
 
