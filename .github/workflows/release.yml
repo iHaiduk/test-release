@@ -38,12 +38,20 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Get Version
+        run: |
+          echo "MPRGS_VERSION=$(grep -oP -m 1 '(?<=")(?:\\.|[^"\\])*(?=")' project.clj)" >> $GITHUB_ENV
+
       - name: Create GitHub Release
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: "${{ env.MPRGS_VERSION }}"
           prerelease: true
-          title: Node-Red-ESPHome Release
+          title: "Node-Red-ESPHome Release v${{ env.MPRGS_VERSION }}"
+#          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+#          automatic_release_tag: "latest"
+#          prerelease: true
+#          title: Node-Red-ESPHome Release
           files: release.zip
 
